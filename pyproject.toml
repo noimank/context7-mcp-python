@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "context7-mcp-python"
+version = "1.0.3"
+description = "Context7 MCP 服务器 - Python 实现，提供最新的库文档和代码示例"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "noimank", email = "noimank@example.com"}
+]
+maintainers = [
+    {name = "noimank", email = "noimank@example.com"}
+]
+keywords = ["mcp", "context7", "documentation", "api", "server"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Documentation",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "httpx>=0.23.0",
+    "pydantic>=2.0.0",
+    "mcp>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+    "pre-commit>=3.0.0",
+]
+test = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.0.0",
+    "httpx>=0.23.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/noimank/context7-mcp-python"
+Documentation = "https://github.com/noimank/context7-mcp-python#readme"
+Repository = "https://github.com/noimank/context7-mcp-python"
+Issues = "https://github.com/noimank/context7-mcp-python/issues"
+
+
+[project.scripts]
+context7-mcp-python = "server:main"
+

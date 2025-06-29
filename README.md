@@ -27,14 +27,23 @@ pip install httpx pydantic mcp
 ### 基本运行（stdio 传输）
 
 ```bash
-python main.py
+python server.py
 ```
 
 ### SSE 传输模式
 
 ```bash
-python main.py --transport sse --host 0.0.0.0 --port 8088
+python server.py --transport sse --host 0.0.0.0 --port 8088
 ```
+
+### 使用uvx直接运行
+
+```bash
+
+uvx context7-mcp-python
+
+```
+
 
 ### 配置代理
 
@@ -44,12 +53,12 @@ python main.py --transport sse --host 0.0.0.0 --port 8088
 # Windows
 set HTTP_PROXY=http://100.108.35.118:12080
 set HTTPS_PROXY=http://100.108.35.118:12080
-python main.py
+python server.py
 
 # Linux/Mac
 export HTTP_PROXY=http://100.108.35.118:12080
 export HTTPS_PROXY=http://100.108.35.118:12080
-python main.py
+python server.py
 ```
 
 
@@ -91,8 +100,8 @@ get-library-docs("/facebook/react", topic="hooks", tokens=15000)
 {
   "mcpServers": {
     "context7-python": {
-      "command": "python",
-      "args": ["/path/to/python-mcp/main.py"],
+      "command": "uvx",
+      "args": ["context7-mcp-python"],
       "env": {
         "HTTP_PROXY": "http://100.108.35.118:12080",
         "HTTPS_PROXY": "http://100.108.35.118:12080"
@@ -102,20 +111,6 @@ get-library-docs("/facebook/react", topic="hooks", tokens=15000)
 }
 ```
 
-### Claude Desktop 配置
-
-在配置文件中添加：
-
-```json
-{
-  "mcpServers": {
-    "context7-python": {
-      "command": "python",
-      "args": ["/path/to/python-mcp/main.py"]
-    }
-  }
-}
-```
 
 ## 错误处理
 

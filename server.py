@@ -7,6 +7,8 @@ This MCP server provides up-to-date documentation and code examples
 for libraries by interfacing with Context7 API.
 """
 
+# __version__ = "1.0.1"
+
 import argparse
 import asyncio
 import os
